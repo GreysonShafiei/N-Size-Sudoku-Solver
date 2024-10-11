@@ -99,15 +99,15 @@ def fill_board():
             # If a conflict is found, restart the process
             continue  # This will trigger a new attempt to generate the board
 
-    print()
-    print("A Solution was found")
-    print()
-    print("Here is the Filled Board:")
-    print()
-    for row in sudoku_board:
-        for col in row:
-            print(col, end=' ')
-        print()
+    # print()
+    # print("A Solution was found")
+    # print()
+    # print("Here is the Filled Board:")
+    # print()
+    # for row in sudoku_board:
+    #     for col in row:
+    #         print(col, end=' ')
+    #     print()
 
             
              
