@@ -11,15 +11,16 @@ def main():
 
     sudoku_board_start = start_or_restart()
     correct_board = sudoku_board_start
+    sudoku_board_start = sudoku_board
+    
     print_board()
 
     AISolve = input("Would you like AI to solve the problem? (Y/N): ")
 
-    if AISolve == "Y" or "y":
+    if AISolve == "Y" or AISolve == "y":
         start_solve()
 
-    if sudoku_board == correct_board:
-        print("Succesfully solved")
+    print()
 
 # Initializes empty board
 def initialize_empty_board():
@@ -147,14 +148,6 @@ def add_blanks():
 
                 # Place a blank (underscore) in the chosen position, ensuring no border is replaced
                 sudoku_board[actual_row][actual_col] = "_"
-    print()
-    for _ in blank_locations:
-        print('***', end='')
-    print()
-    print(f"Here are the blank locations: {blank_locations}")
-    for _ in blank_locations:
-        print('___', end='')
-    print()
 
 # Starts/resets the game
 def start_or_restart():
@@ -208,7 +201,7 @@ def start_solve():
             continue
 
     print()
-    print("Here is the Completed Board:")
+    print("Here is a solution to the Board:")
     print()
     for row in sudoku_board:
         for col in row:
@@ -227,13 +220,12 @@ def print_board():
         for col in row:
             print(col, end=' ')
         print()
+    print()
     
+    print(f"Here are the blank locations: {blank_locations}")
+    for _ in range(len(f"Here are the blank locations: {blank_locations}")):
+        print('_', end='')
     print()
-    print("Here is the Answer Board:")
     print()
-    for row in answer_arr:
-        for col in row:
-            print(col, end=' ')
-        print()
 
 main()
